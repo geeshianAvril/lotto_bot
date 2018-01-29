@@ -28,8 +28,8 @@ def makeWebhookResult(req):
     parameters = result.get('parameters')
     date = parameters.get('date')
 
-    winning_numbers = {"01/27/2018" : ["17-21-26-47-54-07", "2"], "01/24/2018" : ["05-09-11-33-64-21", "3"],
-                       "01/20/2018": ["26-28-47-49-58-03", "8"]}
+    winning_numbers = {"2018-01-31" : ["17-21-26-47-54-07", "2"], "2018-01-29" : ["05-09-11-33-64-21", "3"],
+                       "2018-01-27": ["26-28-47-49-58-03", "8"]}
 
     speech = " The Winning Numbers for " + date + "are" + str(winning_numbers[date][0]) + "and the multiplier is" + \
              str(winning_numbers[date][1])
@@ -42,7 +42,7 @@ def makeWebhookResult(req):
         "displayText": speech,
         # "data": {},
         # "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
+        "source": "lotto-bot-test"
     }
 
 
