@@ -7,7 +7,7 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
 
@@ -19,7 +19,7 @@ def webhook():
     res = json.dumps(res,indent=4)
     print(res)
     r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
+    r.headers['Content-type'] = 'application/json'
 
 def makeWebhookResult(req):
     if req.get('result').get('action') != 'lottery-intent':
@@ -28,11 +28,11 @@ def makeWebhookResult(req):
     parameters = result.get('parameters')
     date = parameters.get('date')
 
-    winning_numbers = {"2018-01-31" : ["17-21-26-47-54-07", "2"], "2018-01-29" : ["05-09-11-33-64-21", "3"],
-                       "2018-01-27": ["26-28-47-49-58-03", "8"]}
+    winning_numbers = {"2018-01-31" : "17-21-26-47-54-07", "2018-01-29" : "05-09-11-33-64-21",
+                       "2018-01-27": "26-28-47-49-58-03"}
 
-    speech = " The Winning Numbers for " + date + "are" + str(winning_numbers[date][0]) + "and the multiplier is" + \
-             str(winning_numbers[date][1])
+    speech = " The Winning Numbers for " + date + "are" + str(winning_numbers[date])
+
 
     print("Response:")
     print(speech)
