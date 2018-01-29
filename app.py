@@ -20,6 +20,7 @@ def webhook():
     print(res)
     r = make_response(res)
     r.headers['Content-type'] = 'application/json'
+    return "OK"
 
 def makeWebhookResult(req):
     if req.get('result').get('action') != 'lottery-intent':
@@ -31,7 +32,7 @@ def makeWebhookResult(req):
     winning_numbers = {"2018-01-31" : "17-21-26-47-54-07", "2018-01-29" : "05-09-11-33-64-21",
                        "2018-01-27": "26-28-47-49-58-03"}
 
-    speech = " The Winning Numbers for " + date + "are" + str(winning_numbers[date])
+    speech = " The Winning Numbers for " + " " + date + " are " + str(winning_numbers[date])
 
 
     print("Response:")
