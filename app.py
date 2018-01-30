@@ -44,7 +44,7 @@ def makeWebhookResult(req):
                                       "2017-12-09": ["1-3-14-27", "3", "G", "29,000"],
                                       "2017-12-06": ["2-19-25-29", "1", "B", "27,500"],
                                       "2017-12-02": ["8-14-17-30", "4", "H", "26,000"]},
-                       "Super Six": {"2017-12-29": ["9-10-13-20-25-27", "E", "245,000"],
+                       "Super six": {"2017-12-29": ["9-10-13-20-25-27", "E", "245,000"],
                                      "2017-12-27": ["7-10-15-18-27-28", "L", "240,000"],
                                      "2017-12-22": ["5-9-13-17-21-28", "L", "235,000"],
                                      "2017-12-19": ["1-2-5-7-12-14", "G", "230,000"],
@@ -56,7 +56,7 @@ def makeWebhookResult(req):
     win_num = str(winning_numbers[game][date][0])
     win_letter = str(winning_numbers[game][date][2])
     #win_mul = str(winning_numbers[game][date][])
-    speech = " The Winning Numbers for " + game + " on" + date + " are " + win_num + " and Letter " + win_letter
+    speech = " The Winning Numbers for " + game + " on " + date + " are " + win_num + " and Letter " + win_letter
 
     #speech = " The Winning Numbers for " + " " + date + " are " + str(winning_numbers[date])
 
