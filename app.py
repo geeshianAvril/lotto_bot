@@ -54,8 +54,11 @@ def makeWebhookResult(req):
                                      "2017-12-05": ["2-15-21-24-25-27", "H", "210,000"],
                                      "2017-12-01": ["7-10-15-18-21-27", "J", "205,000"]}}
 
-    speech = " The Winning Numbers for " + " " + date + " are " + str(winning_numbers[game][date][0]) + "Multiplier" + \
-             str(winning_numbers[game][date][2])
+    win_num = str(winning_numbers[game][date][0])
+    win_letter = str(winning_numbers[game][date][2])
+    speech = " The Winning Numbers for " + " " + date + " are " + win_num + "Multiplier" + \
+        win_letter
+
     #speech = " The Winning Numbers for " + " " + date + " are " + str(winning_numbers[date])
 
 
