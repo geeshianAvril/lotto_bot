@@ -35,7 +35,7 @@ def makeWebhookResult(req):
     #winning_numbers = {"Power Play":{"Date": ["numbers", "power_pick", "letter", "Jackpot"]},
     #                   "Super Six": {"Date": ["numbers", "letter", "Jackpot"]}}
     if game == "Power Play":
-       winning_numbers = {"2017-12-30": "12-15-23-29,  Multi: 2,  Letter: M",
+        winning_numbers = {"2017-12-30": "12-15-23-29,  Multi: 2,  Letter: M",
                                       "2017-12-27": "8-12-19-25, Multi: 3, Letter: B, Jackpot:37,000",
                                       "2017-12-23": "6-13-27-29, Multi: 3, Letter: G, Jackpot:35,500",
                                       "2017-12-20": "2-5-10-17, Multi: 3, Letter: E, Jackpot:33,500",
@@ -44,7 +44,21 @@ def makeWebhookResult(req):
                                       "2017-12-09": "1-3-14-27, Multi: 3, Letter: G, Jackpot:29,000",
                                       "2017-12-06": "2-19-25-29, Multi: 1, Letter: B, Jackpot:27,500",
                                       "2017-12-02": "8-14-17-30, Multi: 4, Letter: H, Jackpot:26,000"}
-    elif game =="Super Six":
+        win_num = str(winning_numbers[date])
+        speech = " The Winning Numbers for " + " " + date + " are " + win_num
+
+        print("Response:")
+        print(speech)
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+            "source": "lotto-bot-test"
+        }
+
+    elif game == "Super Six":
 
         winning_numbers= {"2017-12-29":  "9-10-13-20-25-27, Multi: E, Jackpot:245,000",
                                      "2017-12-27":  "7-10-15-18-27-28, Multi: L, Jackpot:240,000",
@@ -55,24 +69,37 @@ def makeWebhookResult(req):
                                      "2017-12-08":  "3-12-19-20-22-23, Multi: N, Jackpot:215,000",
                                      "2017-12-05":  "2-15-21-24-25-27, Multi: H, Jackpot:210,000",
                                      "2017-12-01":  "7-10-15-18-21-27, Multi: J, Jackpot:205,000"}
+        win_num = str(winning_numbers[date])
+        speech = " The Winning Numbers for " + " " + date + " are " + win_num
 
-    win_num = str(winning_numbers[date])
+        print("Response:")
+        print(speech)
+
+        return {
+            "speech": speech,
+            "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+            "source": "lotto-bot-test"
+        }
+
+    #win_num = str(winning_numbers[date])
     #win_letter = str(winning_numbers[game][date][2])
-    speech = " The Winning Numbers for " + " " + date + " are " + win_num
+    #speech = " The Winning Numbers for " + " " + date + " are " + win_num
 
     #speech = " The Winning Numbers for " + " " + date + " are " + str(winning_numbers[date])
 
 
-    print("Response:")
-    print(speech)
+    #print("Response:")
+    #print(speech)
 
-    return {
-        "speech": speech,
-        "displayText": speech,
+   # return {
+    #    "speech": speech,
+     #   "displayText": speech,
         # "data": {},
         # "contextOut": [],
-        "source": "lotto-bot-test"
-    }
+      #  "source": "lotto-bot-test"
+    #}
 
 
 if __name__ == '__main__':
