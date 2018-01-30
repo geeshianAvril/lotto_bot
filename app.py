@@ -1,4 +1,5 @@
 import urllib
+import logging
 import json
 import os
 from flask import Flask
@@ -20,7 +21,7 @@ def webhook():
     print(res)
     r = make_response(res)
     r.headers['Content-type'] = 'application/json'
-    return "OK"
+    return r
 
 def makeWebhookResult(req):
     if req.get('result').get('action') != 'lottery-intent':
