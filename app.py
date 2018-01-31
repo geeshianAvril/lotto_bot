@@ -69,7 +69,20 @@ def makeWebhookResult(req):
        "displayText": speech,
         # "data": {},
         # "contextOut": [],
-      "source": "lotto-bot-test"
+       "source": "lotto-bot-test",
+       "messages": [{
+
+                        "platform": "facebook",
+                        "replies": [
+                            "Power Play",
+                            "Super six",
+                            "Lucky 3"
+                            "FAQ"
+
+                                   ],
+        "title": "How Can i help you today?",
+        "type": 2
+    }]
     }
 
 
