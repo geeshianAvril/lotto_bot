@@ -52,10 +52,7 @@ def makeWebhookResult(req):
                                      "2017-12-12": ["1-5-6-9-10-19", "F", "220,000"],
                                      "2017-12-08": ["3-12-19-20-22-23", "N", "215,000"],
                                      "2017-12-05": ["2-15-21-24-25-27", "H", "210,000"],
-                                     "2017-12-01": ["7-10-15-18-21-27", "J", "205,000"]}
-                       "Results": {"2018-01-29": ["test"],
-                                     "2018-01-30": ["test"],
-                                     "2018-01-31": ["test"]}}
+                                     "2017-12-01": ["7-10-15-18-21-27", "J", "205,000"]}}
     win_num = str(winning_numbers[game][date][0])
     win_letter = str(winning_numbers[game][date][2])
     #win_mul = str(winning_numbers[game][date][])
@@ -66,51 +63,27 @@ def makeWebhookResult(req):
 
     print("Response:")
     print(speech)
-    if win_num != "test":
-        return {
-           "speech": speech,
-           "displayText": speech,
-            # "data": {},
-            # "contextOut": [],
-           "source": "lotto-bot-test",
-          # "messages": [{
-    #
-     #                       "platform": "facebook",
-      #                      "replies": [
-       #                         "Power Play",
-        #                        "Super six",
-         #                       "Lucky 3"
-          #                      "FAQ"
 
-           #                            ],
-            #"title": "How Can i help you today?",
-            #"type": 2
-              #           }]
+    return {
+       "speech": speech,
+       "displayText": speech,
+        # "data": {},
+        # "contextOut": [],
+       "source": "lotto-bot-test",
+      # "messages": [{
+#
+ #                       "platform": "facebook",
+  #                      "replies": [
+   #                         "Power Play",
+    #                        "Super six",
+     #                       "Lucky 3"
+      #                      "FAQ"
 
-            }
-    else:
-        return {
-            "speech": speech,
-            "displayText": speech,
-            # "data": {},
-            # "contextOut": [],
-            "source": "lotto-bot-test",
-             "messages": [{
-
-                                   "platform": "facebook",
-                                  "replies": [
-                                     "Power Play",
-                                    "Super six",
-                                   "Lucky 3"
-                                  "FAQ"
-
-                                        ],
-             "title": "This is just to show quick replies?",
-             "type": 2
-                       }]
-
-        }
-
+       #                            ],
+        #"title": "How Can i help you today?",
+        #"type": 2
+          #           }]
+    }
 
 
 if __name__ == '__main__':
