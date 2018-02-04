@@ -70,19 +70,19 @@ def makeWebhookResult(req):
         # "data": {},
         # "contextOut": [],
        "source": "lotto-bot-test",
-      # "messages": [{
-#
- #                       "platform": "facebook",
-  #                      "replies": [
-   #                         "Power Play",
-    #                        "Super six",
-     #                       "Lucky 3"
-      #                      "FAQ"
+       "messages": [{
 
-       #                            ],
-        #"title": "How Can i help you today?",
-        #"type": 2
-          #           }]
+                       "platform": "facebook",
+                        "replies": [
+                            "Power Play",
+                           "Super six",
+                            "Lucky 3"
+                            "FAQ"
+
+                                   ],
+        "title": "How Can i help you today?",
+        "type": 2
+                     }]
     }
 
 
