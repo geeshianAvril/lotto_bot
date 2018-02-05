@@ -224,6 +224,11 @@ def makeWebhookResult(req):
     date = parameters.get('date')
     game = parameters.get('game')
 
+    if date not in winning_numbers[game]:
+        return {"speech": "There was no draw on this date",
+                "displayText": " There was no draw on this date",
+                "source": "lotto-bot-test"
+                }
     win_num = str(winning_numbers[game][date][0])
     win_num1 = str(winning_numbers[game][date])
     win_letter = str(winning_numbers[game][date][2])
