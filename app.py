@@ -232,23 +232,24 @@ def makeWebhookResult(req):
     multi_num = str(winning_numbers[game][date][1])
     win_letter2 = str(winning_numbers[game][date][1])
 
-    game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num1,
+    game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" +
+                                        win_num1,
 
-                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num1,
+                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" +  "🎫" + win_num1,
 
-                  "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
-                           " \n Midday: " + m_win_num,
+                  "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
+                           e_win_num + " \n Midday: " + "🎫" + m_win_num,
 
-                  "Lucky 3": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
-                             "\n Midday: " + m_win_num,
+                  "Lucky 3": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
+                             e_win_num + "\n Midday: " + "🎫" + m_win_num,
 
-                  "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
-                           "\n Midday: " + m_win_num,
+                  "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
+                           e_win_num + "\n Midday: " + "🎫" + m_win_num,
 
-                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num +
-                                 "the multiplier: " + multi_num + " and Letter  " + win_letter,
+                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
+                                 " the multiplier: " + multi_num + " and Letter " + win_letter,
 
-                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num +
+                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" +  "🎫" + win_num +
                                " and Letter " + win_letter2,
                   }
 
