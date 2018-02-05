@@ -120,7 +120,7 @@ def makeWebhookResult(req):
                                    "2018-01-01": ["4-7-3", "0-2-1"],
 
                                    },
-                       "Daily Double Grand": {"2018-01-31": "2-5-15-21",
+                       "Double Daily Grand": {"2018-01-31": "2-5-15-21",
                                               "2018-01-30": "2-3-14-21",
                                               "2018-01-29": "1-4-12-15",
                                               "2018-01-27": "8-10-15-16",
@@ -225,7 +225,7 @@ def makeWebhookResult(req):
     game = parameters.get('game')
 
     win_num = str(winning_numbers[game][date][0])
-    win_letter = str(winning_numbers[game][date][2])
+    #win_letter = str(winning_numbers[game][date][2])
     e_win_num = str(winning_numbers[game][date][0])
     m_win_num = str(winning_numbers[game][date][1])
     multi_num = str(winning_numbers[game][date][1])
@@ -233,21 +233,21 @@ def makeWebhookResult(req):
 
     game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are " + win_num ,
 
-                  "Tic Tac Toe" : "The Winning Numbers for " + game + " on " + date + " are " + win_num,
+                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are " + win_num,
 
-                  "1 Off" : "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
+                  "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
                             "Midday #:" + m_win_num,
 
-                  "Lucky 3" : "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
+                  "Lucky 3": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
                             "Midday #:" + m_win_num,
 
-                  "Big 4" : "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
+                  "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
                             "Midday #:" + m_win_num,
 
-                  "Power Play" : " The Winning Numbers for " + game + " on " + date + " are " + win_num +
-                                 "multiplier is" + multi_num + " and Letter " + win_letter,
+                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are " + win_num +
+                                 "multiplier is" + multi_num + " and Letter " + win_letter2,
 
-                  "Super Six" : " The Winning Numbers for " + game + " on " + date + " are " + win_num + " and Letter "
+                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are " + win_num + " and Letter "
                                 + win_letter2,
                   }
 
