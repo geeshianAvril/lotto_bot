@@ -225,30 +225,31 @@ def makeWebhookResult(req):
     game = parameters.get('game')
 
     win_num = str(winning_numbers[game][date][0])
-    #win_letter = str(winning_numbers[game][date][2])
+    win_num1 = str(winning_numbers[game][date])
+    win_letter = str(winning_numbers[game][date][2])
     e_win_num = str(winning_numbers[game][date][0])
     m_win_num = str(winning_numbers[game][date][1])
     multi_num = str(winning_numbers[game][date][1])
     win_letter2 = str(winning_numbers[game][date][1])
 
-    game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are " + win_num ,
+    game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num1,
 
-                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are " + win_num,
+                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num1,
 
-                  "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
-                            "Midday #:" + m_win_num,
+                  "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
+                           " \n Midday: " + m_win_num,
 
-                  "Lucky 3": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
-                            "Midday #:" + m_win_num,
+                  "Lucky 3": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
+                             "\n Midday: " + m_win_num,
 
-                  "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "Evening #:" + e_win_num +
-                            "Midday #:" + m_win_num,
+                  "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + e_win_num +
+                           "\n Midday: " + m_win_num,
 
-                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are " + win_num +
-                                 "multiplier is" + multi_num + " and Letter " + win_letter2,
+                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num +
+                                 "the multiplier: " + multi_num + " and Letter  " + win_letter,
 
-                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are " + win_num + " and Letter "
-                                + win_letter2,
+                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + win_num +
+                               " and Letter " + win_letter2,
                   }
 
     if game not in game_dict:
