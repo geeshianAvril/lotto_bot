@@ -225,8 +225,8 @@ def makeWebhookResult(req):
     game = parameters.get('game')
 
     if date not in winning_numbers[game]:
-        return {"speech": "There was no draw on this date",
-                "displayText": " There was no draw on this date",
+        return {"speech": "I'm Sorry, there was no draw held on this date",
+                "displayText": "I'm Sorry, there was no draw held on this date",
                 "source": "lotto-bot-test"
                 }
     win_num = str(winning_numbers[game][date][0])
@@ -240,7 +240,7 @@ def makeWebhookResult(req):
     game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" +
                                         win_num1,
 
-                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" +  "🎫" + win_num1,
+                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num1,
 
                   "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
                            e_win_num + " \n Midday: " + "🎫" + m_win_num,
