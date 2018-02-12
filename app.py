@@ -222,7 +222,7 @@ def makeWebhookResult(req):
     result = req.get('result')
     parameters = result.get('parameters')
     date = parameters.get('date')
-    game = parameters.get('game')
+    game = parameters.get('game-options')
 
 
     win_num = str(winning_numbers[game][date][0])
