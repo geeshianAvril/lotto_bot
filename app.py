@@ -227,7 +227,7 @@ def makeWebhookResult(req):
 
     win_num = str(winning_numbers[game][date][0])
     win_num1 = str(winning_numbers[game][date])
-    win_letter = str(winning_numbers[game][date][2])
+    #win_letter = str(winning_numbers[game][date][2])
     e_win_num = str(winning_numbers[game][date][0])
     m_win_num = str(winning_numbers[game][date][1])
     multi_num = str(winning_numbers[game][date][1])
@@ -248,7 +248,7 @@ def makeWebhookResult(req):
                            e_win_num + "\n Midday: " + "🎫" + m_win_num,
 
                   "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
-                                 " the multiplier: " + multi_num + " and Letter " + win_letter,
+                                 " the multiplier: " + multi_num + " and Letter " + str(winning_numbers[game][date][2]),
 
                   "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" +  "🎫" + win_num +
                                " and Letter " + win_letter2,
