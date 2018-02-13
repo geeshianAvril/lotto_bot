@@ -266,8 +266,8 @@ def gameResults(req):
     # if req.get('result').get('action') != 'lottery-intent':
     #   return{}
 
-    win_num = str(winning_numbers[game][date][0])
-    #win_num1 = str(winning_numbers[game][date])
+    #win_num = str(winning_numbers[game][date][0]) # changed to win_num1 below
+    win_num1 = str(winning_numbers[game][date])
     win_letter = str(winning_numbers[game][date][2])
     e_win_num = str(winning_numbers[game][date][0])
     m_win_num = str(winning_numbers[game][date][1])
@@ -275,9 +275,9 @@ def gameResults(req):
     win_letter2 = str(winning_numbers[game][date][1])
 
     game_dict = { "Double Daily Grand": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" +
-                                        win_num,
+                                        win_num1,
 
-                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num,
+                  "Tic Tac Toe": "The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num1,
 
                   "1 Off": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
                            e_win_num + " \n Midday: " + "🎫" + m_win_num,
@@ -288,10 +288,10 @@ def gameResults(req):
                   "Big 4": "The Winning Numbers for " + game + " on " + date + " are: " + "\n Evening: " + "🎫" +
                            e_win_num + "\n Midday: " + "🎫" + m_win_num,
 
-                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
+                  "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num1 +
                                  " the multiplier: " + multi_num + " and Letter " + win_letter,
 
-                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
+                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num1 +
                                " and Letter " + win_letter2
                   }
 
@@ -322,12 +322,13 @@ def makeWebhookResult(req):
     action_dict = {"lottery-intent" : gameResults(req),
                    "drawdate-intent": drawdateResults(req)}
     action = req.get('result').get('action')
-    if action not in action_dict.keys():
-        return{}
-    response = action_dict[action]
 
-    return response
-
+    if action == "lottery-intent":
+        response = action_dict[action]
+        return response
+    elif action == "drawdate-intent":
+        response = action_dict[action]
+        return response
 
 
 if __name__ == '__main__':
