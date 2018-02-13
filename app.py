@@ -26,6 +26,12 @@ def webhook():
 
 def drawdateResults(req):
 
+
+    result = req.get('result')
+    parameters = result.get('parameters')
+    date = parameters.get('date')
+    game1 = parameters.get('game-options')
+
     drawdate_dict = {"Double Daily Grand": ["Double Daily Grand, is played six days a week at 1:30 p.m., Monday through"
                                             "Saturday on public holidays"],
 
@@ -45,12 +51,7 @@ def drawdateResults(req):
                      "Super Six": ["Super 6 is played twice a week every Tuesday and Friday at 10:00 p.m."]
                      }
 
-    result = req.get('result')
-    parameters = result.get('parameters')
-    date = parameters.get('date')
-    game = parameters.get('game-options')
-
-    speech = drawdate_dict[game][0]
+    speech = drawdate_dict[game1][0]
 
     print("Response:")
     print(speech)
@@ -267,7 +268,7 @@ def gameResults(req):
     #   return{}
 
     #win_num = str(winning_numbers[game][date][0]) # changed to win_num1 below
-    win_num1 = str(winning_numbers[game][date])
+    win_num1 = str(winning_numbers[game][date][0])
     win_letter = str(winning_numbers[game][date][2])
     e_win_num = str(winning_numbers[game][date][0])
     m_win_num = str(winning_numbers[game][date][1])
@@ -319,8 +320,9 @@ def makeWebhookResult(req):
     # delineate between actions to select function
     # if action is lottery-intent use gameResults function
 
-    action_dict = {"lottery-intent" : gameResults(req),
-                   "drawdate-intent": drawdateResults(req)}
+    # action_dict = {"lottery-intent" : gameResults(req),
+    #               "drawdate-intent": drawdateResults(req)}
+
     action = req.get('result').get('action')
 
     if action == "lottery-intent":
