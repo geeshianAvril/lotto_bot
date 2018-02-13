@@ -250,17 +250,12 @@ def makeWebhookResult(req):
                   "Power Play": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
                                  " the multiplier: " + multi_num + " and Letter " + str(winning_numbers[game][date][2]),
 
-                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" +  "🎫" + win_num +
+                  "Super Six": " The Winning Numbers for " + game + " on " + date + " are: " + "\n" + "🎫" + win_num +
                                " and Letter " + win_letter2,
                   }
 
     if game not in game_dict:
         return {}
-    if date not in winning_numbers[game]:
-        return {"speech": "I'm Sorry, there was no draw held on this date",
-                "displayText": "I'm Sorry, there was no draw held on this date",
-                "source": "lotto-bot-test"
-                }
     speech = game_dict[game]
 
     print("Response:")
