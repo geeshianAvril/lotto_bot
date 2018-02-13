@@ -324,10 +324,10 @@ def makeWebhookResult(req):
     action = req.get('result').get('action')
 
     if action == "lottery-intent":
-        response = action_dict[action]
+        response = gameResults(req)
         return response
     elif action == "drawdate-intent":
-        response = action_dict[action]
+        response = drawdateResults(req)
         return response
 
 
