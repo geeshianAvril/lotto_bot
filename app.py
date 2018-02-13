@@ -47,6 +47,7 @@ def drawdateResults(req):
 
     result = req.get('result')
     parameters = result.get('parameters')
+    date = parameters.get('date')
     game = parameters.get('game-options')
 
     speech = drawdate_dict[game][0]
