@@ -41,7 +41,7 @@ def makeWebhookResult(req):
 
     if result == 'Lucky 3':
         selectstatement = ''' SELECT  FROM public.LuckyThree where "date" = %s'''
-        cursor.execute(selectstatement,(data,))
+        cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
 
 
@@ -63,7 +63,7 @@ def makeWebhookResult(req):
 
     else if result == 'Power Play':
         selectstatement = '''SELECT * FROM public.PowerPlay where "date" = %s'''
-        cursor.execute(selectstatement,(data,))
+        cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
         speech = "The result for Power Play is " + str(records[1:3])
 
@@ -80,7 +80,7 @@ def makeWebhookResult(req):
 
     else if result == 'Big 4':
         selectstatement = '''SELECT * FROM public.BigFour where "date" = %s'''
-        cursor.execute(selectstatement,(data,))
+        cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
 
         speech = "The result for Big 4 is " + str(records[1:3])
