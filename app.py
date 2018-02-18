@@ -133,14 +133,47 @@ def gameResults(req):
                }
 
     elif result == 'Super Six':
+        return {
+           "speech": 'speech',
+           "displayText": 'speech',
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
+
 
     elif result == 'Double Daily Grand':
+        return {
+           "speech": 'speech',
+           "displayText": 'speech',
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
 
 
     elif result == '1 Off':
+        return {
+           "speech": 'speech',
+           "displayText": 'speech',
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
 
 
     elif result == 'Tic Tac Toe':
+        return {
+           "speech": 'speech',
+           "displayText": 'speech',
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
 
 
     if game not in game_dict:
