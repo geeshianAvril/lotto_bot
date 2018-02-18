@@ -176,18 +176,11 @@ def gameResults(req):
     #            }
 
 
-    if game not in game_dict:
-        return {}
-
-
-    speech = game_dict[game]
-
-    print("Response:")
-    print(speech)
+    
 
     return {
-       "speech": speech,
-       "displayText": speech,
+       "speech": 'speech',
+       "displayText": 'speech',
         # "data": {},
         # "contextOut": [],
        "source": "lotto-bot-test",
