@@ -76,7 +76,7 @@ def gameResults(req):
     game = parameters.get('game-options')
     print (result)
 
-    if result == 'Lucky 3':
+    if game == 'Lucky 3':
         selectstatement = ''' SELECT  FROM public.LuckyThree where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
@@ -98,7 +98,7 @@ def gameResults(req):
 
 
 
-    elif result == 'Power Play':
+    elif game == 'Power Play':
         selectstatement = '''SELECT * FROM public.PowerPlay where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
@@ -115,7 +115,7 @@ def gameResults(req):
 
                }
 
-    elif result == 'Big 4':
+    elif game == 'Big 4':
         selectstatement = '''SELECT * FROM public.BigFour where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
