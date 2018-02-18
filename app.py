@@ -5,8 +5,8 @@ import os
 from flask import Flask
 from flask import make_response
 from flask import request
-#import psycopg2
-from psycopg2._psycopg import cursor
+import psycopg2
+#from psycopg2._psycopg import cursor
 
 app = Flask(__name__)
 
@@ -69,12 +69,16 @@ def drawdateResults(req):
 
 
 def gameResults(req):
+    conn_string = "host='ec2-54-235-64-195.compute-1.amazonaws.com' dbname=d2fjg5inmb4pta user='dcudkoeyfioakr' password='0984fa768adc6681ee0955a7848b0a7a714846e73fc9a033bae80a7b48216be2'"
+
+    conn = psycopg2.connect(conn_string)
+    cursor = conn.cursor()
 
     result = req.get('result')
     parameters = result.get('parameters')
     date = parameters.get('date')
     game = parameters.get('game-options')
-    print (result)
+    print (game)
 
     if game == 'Lucky 3':
         selectstatement = ''' SELECT  FROM public.LuckyThree where "date" = %s'''
