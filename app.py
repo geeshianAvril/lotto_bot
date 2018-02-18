@@ -96,7 +96,7 @@ def gameResults(req):
 
 
 
-    else if result == 'Power Play':
+    elif result == 'Power Play':
         selectstatement = '''SELECT * FROM public.PowerPlay where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
@@ -113,7 +113,7 @@ def gameResults(req):
 
                }
 
-    else if result == 'Big 4':
+    elif result == 'Big 4':
         selectstatement = '''SELECT * FROM public.BigFour where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
@@ -131,15 +131,15 @@ def gameResults(req):
 
                }
 
-    else if result == 'Super Six':
+    elif result == 'Super Six':
 
-    else if result == 'Double Daily Grand':
-
-
-    else if result == '1 Off':
+    elif result == 'Double Daily Grand':
 
 
-    else if result == 'Tic Tac Toe':
+    elif result == '1 Off':
+
+
+    elif result == 'Tic Tac Toe':
 
 
     if game not in game_dict:
