@@ -74,6 +74,7 @@ def gameResults(req):
     parameters = result.get('parameters')
     date = parameters.get('date')
     game = parameters.get('game-options')
+    print (result)
 
     if result == 'Lucky 3':
         selectstatement = ''' SELECT  FROM public.LuckyThree where "date" = %s'''
@@ -176,7 +177,7 @@ def gameResults(req):
     #            }
 
 
-    
+
 
     return {
        "speech": 'speech',
