@@ -81,7 +81,7 @@ def gameResults(req):
     print (game)
 
     if game == 'Lucky 3':
-        selectstatement = ''' SELECT  FROM public.LuckyThree where "date" = %s'''
+        selectstatement = ''' SELECT  FROM  LuckyThree where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
 
@@ -103,7 +103,7 @@ def gameResults(req):
 
 
     elif game == 'Power Play':
-        selectstatement = '''SELECT * FROM public.PowerPlay where "date" = %s'''
+        selectstatement = '''SELECT * FROM  PowerPlay where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
         speech = "The result for Power Play is " + str(records[1:3])
@@ -120,7 +120,7 @@ def gameResults(req):
                }
 
     elif game == 'Big 4':
-        selectstatement = '''SELECT * FROM public.BigFour where "date" = %s'''
+        selectstatement = '''SELECT * FROM  BigFour where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
 
