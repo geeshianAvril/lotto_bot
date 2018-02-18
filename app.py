@@ -5,7 +5,8 @@ import os
 from flask import Flask
 from flask import make_response
 from flask import request
-import psycopg2
+#import psycopg2
+from psycopg2._psycopg import cursor
 
 app = Flask(__name__)
 
