@@ -137,48 +137,68 @@ def gameResults(req):
 
                }
 
-    # elif result == 'Super Six':
-    #     return {
-    #        "speech": 'speech',
-    #        "displayText": 'speech',
-    #         # "data": {},
-    #         # "contextOut": [],
-    #        "source": "lotto-bot-test",
-    #
-    #            }
-    #
-    #
-    # elif result == 'Double Daily Grand':
-    #     return {
-    #        "speech": 'speech',
-    #        "displayText": 'speech',
-    #         # "data": {},
-    #         # "contextOut": [],
-    #        "source": "lotto-bot-test",
-    #
-    #            }
-    #
-    #
-    # elif result == '1 Off':
-    #     return {
-    #        "speech": 'speech',
-    #        "displayText": 'speech',
-    #         # "data": {},
-    #         # "contextOut": [],
-    #        "source": "lotto-bot-test",
-    #
-    #            }
-    #
-    #
-    # elif result == 'Tic Tac Toe':
-    #     return {
-    #        "speech": 'speech',
-    #        "displayText": 'speech',
-    #         # "data": {},
-    #         # "contextOut": [],
-    #        "source": "lotto-bot-test",
-    #
-    #            }
+    elif result == 'Super Six':
+        selectstatement = '''SELECT * FROM  BigFour where "date" = %s'''
+        cursor.execute(selectstatement,(date,))
+        records = cursor.fetchone()
+
+        speech = "The result for Big 4 is " + str(records[1:3])
+        return {
+           "speech": 'speech',
+           "displayText": 'speech',
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
+
+
+    elif result == 'Double Daily Grand':
+        selectstatement = '''SELECT * FROM  doubledailygrand where "date" = %s'''
+        cursor.execute(selectstatement,(date,))
+        records = cursor.fetchone()
+
+        speech = "The result for Double Daily Grand is " + str(records[1:3])
+        return {
+           "speech": speech,
+           "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
+
+
+    elif result == '1 Off':
+        selectstatement = '''SELECT * FROM  oneoff where "date" = %s'''
+        cursor.execute(selectstatement,(date,))
+        records = cursor.fetchone()
+
+        speech = "The result for 1 Off is " + str(records[1:3])
+        return {
+           "speech": speech,
+           "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
+
+
+    elif result == 'Tic Tac Toe':
+        selectstatement = '''SELECT * FROM  tictactoe where "date" = %s'''
+        cursor.execute(selectstatement,(date,))
+        records = cursor.fetchone()
+
+        speech = "The result for Tic Tac Toe is " + str(records[1:3])
+        return {
+           "speech": speech,
+           "displayText": speech,
+            # "data": {},
+            # "contextOut": [],
+           "source": "lotto-bot-test",
+
+               }
 
 
 
