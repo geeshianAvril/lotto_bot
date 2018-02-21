@@ -81,7 +81,7 @@ def gameResults(req):
     print (game)
 
     if game == 'Lucky 3':
-        selectstatement = ''' SELECT  FROM  LuckyThree where "date" = %s'''
+        selectstatement = ''' SELECT * FROM  LuckyThree where "date" = %s'''
         cursor.execute(selectstatement,(date,))
         records = cursor.fetchone()
 
